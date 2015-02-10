@@ -23,9 +23,9 @@ jQuery(document).ready(function () {
     // Скрипт сам определяет по названию темы - нужно ли ему выполняться или нет.
 	//###########################################################################
     
-	// Можно задать свою высоту и ширину для всех игровых аватарок
-	var avatarHeight = '64px';
-	var avatarWidth = '64px';
+	// Можно задать свою высоту и ширину для всех игровых аватарок в пикселях
+	var avatarHeight = '128';
+	var avatarWidth = '128';
 	
     var gamesArr = [];
 	var gametitle = '';
@@ -64,31 +64,72 @@ jQuery(document).ready(function () {
 
 	function replaceGamer(nameAObj, parentObj, gameIndex) {
 		//Создаем игровую аватарку
-		nameAObj.attr("title", nameAObj.html()).clone().html('<img height="avatarHeight" width="avatarWidth" alt="' + nameAObj.html() +  '" src="'+ gamesArr[gameIndex][nameAObj.html()].fakeAvatar +'"><br/>').prependTo(parentObj);
+		var newNameAObj = nameAObj.attr("title", nameAObj.html()).clone().html('<img alt="' + nameAObj.html() +  '" src="'+ gamesArr[gameIndex][nameAObj.html()].fakeAvatar +'"><br/>').prependTo(parentObj);
+		
+		// берем картинку
+		var $img = newNameAObj.children("img");
+		var newHeight;
+		var newWidth;
+		var shiftTop;
+		var shiftLeft;
+		
+		var width  = $img.width();
+		var height = $img.height();
+    var pow;
+    
+		console.log(width + 'x' + height);
+		if ((height/avatarHeight) > (width/avatarWidth)) {
+      console.log("h > w");
+      if (avatarHeight - height > 0) { pow = 1 } 
+      else { pow = -1 }
+      newWidth = avatarWidth;
+			newHeight = avatarHeight * Math.pow(width/avatarWidth, pow);
+			shiftLeft = 0;
+			shiftTop = - (newHeight - avatarHeight) / 2;
+		}
+		else {
+      console.log("w > h");
+      if (avatarWidth - width > 0) { pow = 1 } 
+      else { pow = -1 }
+			newHeight = avatarHeight;
+			newWidth = avatarWidth *  Math.pow(height/avatarHeight, pow);
+      console.log(height);
+      console.log(newHeight);
+      console.log(height/avatarHeight);
+      console.log(avatarWidth - width);
+      console.log((avatarWidth - width) % 2);
+      console.log(Math.pow(height/avatarHeight, (avatarWidth - width) % 2));
+      console.log(avatarWidth);
+      console.log(newWidth);
+			shiftTop = 0;
+			shiftLeft = - (newWidth - avatarWidth) / 2;
+		}
+		
+		console.log(newHeight + ', ' + newWidth + ', ' + shiftTop + ', ' + shiftLeft);
+		 
 		//Изменяем имя пользователя
 		nameAObj.html(gamesArr[gameIndex][nameAObj.html()].fakeNickname);
 	}
   
-  var currentTitle = $("#page-body").children("h2:first-child").children("a:first-child").html();
+	var currentTitle = $("#page-body").children("h2:first-child").children("a:first-child").html();
     
 	if ($.inArray(currentTitle, gamesArr)) {
 		$('dl.postprofile dt').each(function (index) {
-
 			if ($(this).children('a').size() == 1) {
-			  //У пользователя нет аватар, но нам надо изменить имя и вставить свою аватарку
-			  var nicknameAObj = $(this).children('a:eq(0)');
-			  if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
-				replaceGamer(nicknameAObj, $(this), currentTitle);
-			  }
+				//У пользователя нет аватар, но нам надо изменить имя и вставить свою аватарку
+				var nicknameAObj = $(this).children('a:eq(0)');
+				if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
+					replaceGamer(nicknameAObj, $(this), currentTitle);
+				}
 			}
 			else if ($(this).children('a').size() == 2) {
-			  //У пользователя есть своя аватар, нам надо изменить имя и аватарку
-			  var nicknameAObj = $(this).children('a:eq(1)');
-			  var avatarAObj = $(this).children('a:eq(0)');
-			  if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
-				replaceGamer(nicknameAObj, $(this), currentTitle);
-				avatarAObj.hide();
-			  }
+				//У пользователя есть своя аватар, нам надо изменить имя и аватарку
+				var nicknameAObj = $(this).children('a:eq(1)');
+				var avatarAObj = $(this).children('a:eq(0)');
+				if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
+					replaceGamer(nicknameAObj, $(this), currentTitle);
+					avatarAObj.hide();
+				}
 			}  
 		});
 	}
