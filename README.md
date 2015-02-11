@@ -14,8 +14,8 @@ phpBB forum role play JS script
 Автор: Shark0n callups@gmail.com
 
 Требования:
-- движок форума phpbb 3.1.х
-- jQuery 1.5.х или выше
+- движок форума phpbb 3.0.x
+- jQuery 1.5.2 или выше
 
 История версий:
 - 1.0 2015.02.10 Рабочая версия скрипта для одной игры
