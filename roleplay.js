@@ -85,14 +85,14 @@ jQuery(document).ready(function () {
 		nameAObj.html(gamesArr[gameIndex][nameAObj.html()].fakeNickname);
 	}
   
-	var currentTitle = $("#page-body").children("h2:first-child").children("a:first-child").html();
+	var currentTitle = $("#page-body").children("h2").children("a").html();
     
-	if ($.inArray(currentTitle, gamesArr)) {
+	if (currentTitle in gamesArr) {
 		$('dl.postprofile dt').each(function (index) {
 			if ($(this).children('a').size() == 1) {
 				// User have only real name - adding avatar and changing name
 				var nicknameAObj = $(this).children('a:eq(0)');
-				if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
+				if (nicknameAObj.html() in gamesArr[currentTitle]) {
 					replaceGamer(nicknameAObj, $(this), currentTitle);
 				}
 			}
@@ -100,7 +100,7 @@ jQuery(document).ready(function () {
 				// User have both real name and his avatar - changing avatar and name
 				var nicknameAObj = $(this).children('a:eq(1)');
 				var avatarAObj = $(this).children('a:eq(0)');
-				if ($.inArray(nicknameAObj.html(), gamesArr[currentTitle])) {
+				if (nicknameAObj.html() in gamesArr[currentTitle]) {
 					replaceGamer(nicknameAObj, $(this), currentTitle);
 					avatarAObj.hide();
 				}
