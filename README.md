@@ -41,7 +41,7 @@ INSTALLATION/УСТАНОВКА
 ### 2.1 Редактируем тему игры
 Для этого находим строку 
 
-    `gametitle = 'Случай в тихом океане';`
+    gametitle = 'Случай в тихом океане';
 
 Задаем свое название темы ветки на форуме - это будет название первой игры.
 
@@ -49,13 +49,13 @@ INSTALLATION/УСТАНОВКА
 Каждый игрок описан тремя параметрами. В примере ниже, это:
 - _**Shark0n**_ - логин пользователя на форуме, скрипт заменит его на вымышленное
 - _**Бенджамин Тод**_ - вымышленное имя игрока
-- _**http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg**_ - путь до файла с вымышленной аватаркой игрока
+- _**http ://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg**_ - путь до файла с вымышленной аватаркой игрока
 Для каждого игрока необходимо составить такую конструкцию:
 
-	`gamesArr[gametitle]['Shark0n'] = {
+	gamesArr[gametitle]['Shark0n'] = {
 		'fakeNickname': 'Бенджамин Тод',
 		'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg'
-	};`
+	};
 
 Заменяем на своих игроков. Лишних удаляем, если не хватает - добавляем.
 
@@ -73,9 +73,9 @@ INSTALLATION/УСТАНОВКА
 Требуется библиотека jQuery. Ищем в файле поиском "jquery".
 Если ничего не нашлось - требуется подключить библиотеку jQuery. Для этого находим </head> и вставляем свои строки, чтобы получилось так:
 
-	`<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/roleplay.js"></script>
-	</head>`
+	</head>
 
 Если "jquery" нашлось, тогда вставляем только одну строку с нашим скриптов roleplay.js, чтобы было похоже на то, что выше.
 Важный момент, чтобы наш скрипт шел ниже строки со скриптом "jquery".
