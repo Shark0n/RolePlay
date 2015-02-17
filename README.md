@@ -52,10 +52,10 @@ INSTALLATION/УСТАНОВКА
 - _**http ://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg**_ - путь до файла с вымышленной аватаркой игрока
 Для каждого игрока необходимо составить такую конструкцию:
 
-	gamesArr[gametitle]['Shark0n'] = {
-	'fakeNickname': 'Бенджамин Тод',
-	'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg'
-	};
+	`gamesArr[gametitle]['Shark0n'] = {`
+	`	'fakeNickname': 'Бенджамин Тод',`
+	`	'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg'`
+	`};`
 
 Заменяем на своих игроков. Лишних удаляем, если не хватает - добавляем.
 
