@@ -48,15 +48,16 @@ INSTALLATION/УСТАНОВКА
 
 ### 2.2 Редактируем игроков в файле
 Каждый игрок описан тремя параметрами. В примере ниже, это:
-- _**Shark0n**_ - логин пользователя на форуме, скрипт заменит его на вымышленное
-- _**Бенджамин Тод**_ - вымышленное имя игрока
-- _**http ://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg**_ - путь до файла с вымышленной аватаркой игрока
+- _**Starc**_ - логин пользователя на форуме, скрипт заменит его на вымышленное
+- _**Элиос Мур**_ - вымышленное имя игрока
+- _**http://rewalls.com/images/201012/reWalls.com_12147.jpg**_ - путь до файла с вымышленной аватаркой игрока
 
 Для каждого игрока необходимо составить такую конструкцию:
 
-	gamesArr[gametitle]['Shark0n'] = {
-		'fakeNickname': 'Бенджамин Тод',
-		'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg',
+	gamesArr[gametitle]['Starc'] = 
+	{
+		'fakeNickname': 'Элиос Мур',
+		'fakeAvatar': 'http://rewalls.com/images/201012/reWalls.com_12147.jpg',
 		'fakeAvatarObj': 'empty'
 	};
 
