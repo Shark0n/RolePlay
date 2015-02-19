@@ -56,7 +56,8 @@ INSTALLATION/УСТАНОВКА
 
 	gamesArr[gametitle]['Shark0n'] = {
 		'fakeNickname': 'Бенджамин Тод',
-		'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg'
+		'fakeAvatar': 'http://webnewsmedia.net/wp-content/uploads/2012/12/Detective-903x1024.jpg',
+		'fakeAvatarObj': 'empty'
 	};
 
 Заменяем на своих игроков. Лишних удаляем, если не хватает - добавляем.
