@@ -10,6 +10,7 @@ jQuery(document).ready(function()
 	var gamesArr = [];
 	var gametitle = '';
 
+	// {START GAME DESCRIPTION}
 	// Game title in forum thread
 	gametitle = 'Случай в тихом океане';
 	gamesArr[gametitle] = [];
@@ -38,6 +39,7 @@ jQuery(document).ready(function()
 		'fakeAvatar': 'http://static.kinokopilka.tv/system/images/photos/images/000/128/772/128772_large.jpg',
 		'fakeAvatarObj': 'empty'
 	};
+	// {STOP GAME DESCRIPTION}
 	// Ready
 
 	function replaceGamer(nameAObj, parentObj, gameIndex) 
