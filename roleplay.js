@@ -53,7 +53,7 @@ jQuery(document).ready(function()
 				.clone()
 				.html('<div style="overflow: hidden; width:' + avatarWidth + 'px; height:' + avatarHeight + 'px;">' +
 					'<img alt="' + nameAObj.html() + '" src="' + gamesArr[gameIndex][nameAObj.html()].fakeAvatar + '"></img>' +
-					'</div><br/>')
+					'</div>')
 				.prependTo(parentObj);
 
 			var $img = newNameAObj.children("div").children("img");
@@ -106,11 +106,12 @@ jQuery(document).ready(function()
 				.attr("width", newWidth)
 				.attr("style", 'margin-top: ' + shiftTop + 'px; margin-left: ' + shiftLeft + 'px;');
 
-			gamesArr[gameIndex][nameAObj.html()].fakeAvatarObj = $img;
+			gamesArr[gameIndex][nameAObj.html()].fakeAvatarObj = newNameAObj;
 		} 
 		else 
 		{
 			// Else we have already met this avatar earlier, so we can clone it and make a substitution
+            
 			// No need to recalculate image size again ;)
 			gamesArr[gameIndex][nameAObj.html()].fakeAvatarObj
 				.clone()
