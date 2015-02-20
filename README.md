@@ -27,6 +27,13 @@ phpBB forum role play JS script
 - 1.6 2015.02.20 Исправлена ошибка, при которой последующие аватарки каждого игрока были без ссылки на профиль https://github.com/Shark0n/RolePlay/issues/2
 				 Рефакторинг скрипта.
 
+ССЫЛКИ
+=========
+Мануал: 
+Трекер задач: https://github.com/Shark0n/RolePlay/issues
+Обсуждение и рассылка: https://groups.google.com/forum/#!forum/roleplayjs
+
+
 ОБНОВЛЕНИЕ
 =========
 Если вы использовали раннюю версию данного скрипта, тогда для обновления необходимо:
