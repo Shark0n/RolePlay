@@ -23,7 +23,7 @@ phpBB forum role play JS script
 - аватарки автоматически подгоняются по размеру и центрируются
 
 Чего нет/не работает:
-- исправить ошибку "узкие аватарки" https://github.com/Shark0n/RolePlay.js/issues/1
+- [ ] исправить ошибку "узкие аватарки" https://github.com/Shark0n/RolePlay.js/issues/1
 
 Автор: Shark0n callups@gmail.com
 
@@ -80,7 +80,9 @@ phpBB forum role play JS script
 ### 2.1 Редактируем тему игры
 Для этого находим строку 
 
+```javascript
     gametitle = 'Случай в тихом океане';
+```
 
 Задаем свое название темы ветки на форуме - это будет название первой игры.
 
@@ -92,12 +94,14 @@ phpBB forum role play JS script
 
 Для каждого игрока необходимо составить такую конструкцию:
 
+```javascript
 	gamesArr[gametitle]['Starc'] = 
 	{
 		'fakeNickname': 'Элиос Мур',
 		'fakeAvatar': 'http://rewalls.com/images/201012/reWalls.com_12147.jpg',
 		'fakeAvatarObj': 'empty'
 	};
+```
 
 Заменяем на своих игроков. Лишних удаляем, если не хватает - добавляем.
 
@@ -122,9 +126,11 @@ phpBB forum role play JS script
 Требуется библиотека jQuery. Ищем в файле поиском "jquery".
 Если ничего не нашлось - требуется подключить библиотеку jQuery. Для этого находим </head> и вставляем свои строки, чтобы получилось так:
 
+```javascript
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/roleplay.js"></script>
 	</head>
+```
 
 **Примечание**: Версия вашего скрипта jquery в вашем случае может отличаться, но нужно, чтобы она была не ниже требуемой версии (см. Требования в начале документа).
 Если "jquery" нашлось, тогда вставляем только одну строку с нашим скриптов roleplay.js, чтобы было похоже на то, что выше.
