@@ -41,7 +41,7 @@ phpBB forum role play JS script
 - 1.6 2015.02.20 Исправлена ошибка, при которой последующие аватарки каждого игрока были без ссылки на профиль https://github.com/Shark0n/RolePlay.js/issues/2
 				 Рефакторинг скрипта.
 - 1.7 2015.02.25 Математические функции для вычисления ширины и высоты заменены на CSS width:auto, height:auto
-				 Добавлен roleplay.html-файл для отладки и тестирования скрипта на jsFiddle http://jsfiddle.net/Shark0n/wrc1hoaL/42/
+				 Добавлен roleplay.html-файл для отладки и тестирования скрипта на jsFiddle http://jsfiddle.net/Shark0n/wrc1hoaL/43/
 
 ССЫЛКИ
 =========
